@@ -217,48 +217,112 @@ case "$1" in
             ;;
             h2)
                 ifconfig $ETH $H2_B netmask $MSK_B
-                ifconfig $ETH $H2_C netmask $MSK_C
+                ifconfig $ETH:0 $H2_C netmask $MSK_C
                 
                 #ACA VAN LAS RUTAS
             ;;
             h3)
+                ifconfig $ETH $H3_B netmask $MSK_B
+                ifconfig $ETH:0 $H3_D netmask $MSK_D
+                ifconfig $ETH:1 $H3_E netmask $MSK_E
+                
+                #ACA VAN LAS RUTAS
             ;;
             h4)
+                ifconfig $ETH $H4_B netmask $MSK_B
+                ifconfig $ETH:0 $H4_E netmask $MSK_E
+                
+                #ACA VAN LAS RUTAS
             ;;
             h7)
+                ifconfig $ETH $H7_E netmask $MSK_E
+                
+                #ACA VAN LAS RUTAS
             ;;
             h11)
+                ifconfig $ETH $H11_A1 netmask $MSK_A_1
+                ifconfig $ETH:0 $H11_A4 netmask $MSK_A_4
+                ifconfig $ETH:1 $H11_A5 netmask $MSK_A_5
+                ifconfig $ETH:0 $H11_L netmask $MSK_L
+                
+                #ACA VAN LAS RUTAS
             ;;
             h13)
+                ifconfig $ETH $H13_C netmask $MSK_C
+                ifconfig $ETH:0 $H13_J netmask $MSK_J
+                ifconfig $ETH:1 $H13_L netmask $MSK_L
+                ifconfig $ETH:2 $H13_N netmask $MSK_N
+                
+                #ACA VAN LAS RUTAS 
             ;;
             h15)
+                ifconfig $ETH $H15_A2 netmask $MSK_A_2
+                ifconfig $ETH:0 $H15_A4 netmask $MSK_A_4
+                ifconfig $ETH:1 $H15_A6 netmask $MSK_A_6
+                ifconfig $ETH:2 $H15_I netmask $MSK_I
+                ifconfig $ETH:3 $H15_J netmask $MSK_J
+                ifconfig $ETH:4 $H15_L netmask $MSK_L
+                
+                #ACA VAN LAS RUTAS                
             ;;
             h16)
+                ifconfig $ETH $H16_J netmask $MSK_J
+                
+                #ACA VAN LAS RUTAS
             ;;
             h29)
+                ifconfig $ETH $H29_K netmask $MSK_K
+                ifconfig $ETH:0 $H29_M netmaskk $MSK_M
+                
+                #ACA VAN LAS RUTAS
             ;;
             h30)
+                ifconfig $ETH $H30_A3 netmask $MSK_A_3
+                ifconfig $ETH:0 $H30_A5 netmask $MSK_A_5
+                ifconfig $ETH:1 $H30_A6 netmask $MSK_A_6
+                ifconfig $ETH:2 $H30_K netmask $MSK_K
+                
+                #ACA VAN LAS RUTAS
             ;;
             h31)
+                ifconfig $ETH $H31_H netmask $MSK_H
+                ifconfig $ETH;0 $H31_K netmask $MSK_K
+                ifconfig $ETH:1 $H31_M netmask $MSK_M
+                
+                #ACA VAN LAS RUTAS
             ;;
             h34)
+                ifconfig $ETH $H34_H netmask $MSK_H
+                ifconfig $ETH:0 $H34_I netmask $MSK_I
+                
+                #ACA VAN LAS RUTAS
             ;;
             webserver)
+                ifconfig $ETH $WEB_SERVER netmask $MSK_B
+                route add default gw $H3_E                
             ;;
             telserver_j)
+                ifconfig $ETH $TEL_SERVER_J netmask $MSK_J
+                route add default gw $H16_J
             ;;
             telserver_n)
+                ifconfig $ETH $TEL_SERVER_N netmask $MSK_N
+                route add default gw $H13_J
             ;;
             ftpserver)
+                ifconfig $ETH $FTP_SERVER netmask $MSK_M
+                route add default gw $H31_M
             ;;
-            hostA)
+            hostA)            
+                ifconfig $ETH $HOSTA_NETB netmask $MSK_B
+                route add default gw $H2_B
             ;;
             hostB)
+                ifconfig $ETH $HOSTB_NETK netmask $MSK_K
+                route add default gw $H30_K
             ;;
             hostC)
+                ifconfig $ETH $HOSTC_NETJ netmask $MSK_J
+                route add default gw $H16_J
             ;;
-esac
-
-
-
-
+esac                                       
