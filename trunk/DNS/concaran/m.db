@@ -1,0 +1,8 @@
+@	IN	SOA	ns.concaran.sanluis.dc.fi.uba.ar. postmaster.concaran.sanluis.dc.fi.uba.ar. (
+                              1
+                         604800
+                          86400
+                        2419200
+                         604800 )
+@	IN	NS	ns.concaran.sanluis.dc.fi.uba.ar.
+1	IN	A	ftp.concaran.sanluis.dc.fi.uba.ar.
