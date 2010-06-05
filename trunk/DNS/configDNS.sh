@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/bash
 
 ######################################
 # Script de configuracion de DNS     #
@@ -44,7 +44,7 @@ done
 
 # RECUPERO EL NOMBRE DE LA PRIMERA INTERFACE ETHERNET
 # QUE ES LA QUE VOY A USAR
-ETH=`ifconfig -a | grep -m1 "^eth.*" | awk {'print $1'} | while read LINE`
+ETH=`ifconfig -a | grep -m1 "^eth.*" | awk {'print $1'}`
 
 # LEVANTO LA INTERFACE
 ifconfig $ETH up
