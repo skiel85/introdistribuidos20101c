@@ -8,7 +8,7 @@
 @	IN	NS	ns2.sanluis.dc.fi.uba.ar.
 64/27.23.38.10	NS	ns.concaran.sanluis.dc.fi.uba.ar.
 1.7.10		NS	ns.concaran.sanluis.dc.fi.uba.ar.
-0/26.23.38.10	NS	ns.quines.sanluis.dc.fi.uba.ar.
-23.168.192 	NS	ns.quines.sanluis.dc.fi.uba.ar.
-128/28.23.38.10	NS	ns.quines.sanluis.dc.fi.uba.ar.
-128/25.1.38.10	NS	ns.quines.sanluis.dc.fi.uba.ar.
+0/26.23.38.10	NS	ns.resto.sanluis.dc.fi.uba.ar.
+23.168.192 	NS	ns.resto.sanluis.dc.fi.uba.ar.
+128/28.23.38.10	NS	ns.resto.sanluis.dc.fi.uba.ar.
+128/25.1.38.10	NS	ns.resto.sanluis.dc.fi.uba.ar.
