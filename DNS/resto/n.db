@@ -1,0 +1,8 @@
+@	IN	SOA	ns.quines.sanluis.dc.fi.uba.ar. postmaster.quines.sanluis.dc.fi.uba.ar. (
+                              1
+                         604800
+                          86400
+                        2419200
+                         604800 )
+@	IN	NS	ns.quines.sanluis.dc.fi.uba.ar.
+130	IN	PTR	teln.quines.sanluis.dc.fi.uba.ar.
