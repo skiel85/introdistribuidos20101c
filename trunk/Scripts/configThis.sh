@@ -329,7 +329,7 @@ case "$1" in
 		route add -net $NET_I netmask $MSK_I gw $H34_H
 		route add -net $NET_J netmask $MSK_J gw $H34_H	
 		route add -net $NET_L netmask $MSK_L gw $H34_H	
-		route add -net $NET_N netmask $MSK_N gw $H34_I
+		route add -net $NET_N netmask $MSK_N gw $H34_H
 	    ;;
 	    h34)
     		ifconfig $ETH $H34_H netmask $MSK_H
