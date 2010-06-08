@@ -1,0 +1,41 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	ns.resto.sanluis.dc.fi.uba.ar. root.resto.sanluis.dc.fi.uba.ar. (
+			2010060701	; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	ns.resto.sanluis.dc.fi.uba.ar.
+ns	IN	A	10.38.23.69
+h1a1	IN	A	10.5.1.65
+h11a1	IN	A	10.5.1.66
+h1a2	IN	A	10.5.1.69
+h15a2	IN	A	10.5.1.70
+h1a3	IN	A	10.5.1.73
+h30a3	IN	A	10.5.1.74
+h11a4	IN	A	10.5.1.77
+h15a4	IN	A	10.5.1.78
+h11a5	IN	A	10.5.1.81
+h30a5	IN	A	10.5.1.82
+h15a6	IN	A	10.5.1.85
+h30a6	IN	A	10.5.1.86
+h7f	IN	A	157.43.1.249
+bgw	IN	A	157.43.1.250
+h16g	IN	A	157.43.1.253
+agw	IN	A	157.43.1.254
+h15i	IN	A	10.38.23.249
+h34i	IN	A	10.38.23.250
+h13j	IN	A	10.38.23.130
+h15j	IN	A	10.38.23.131
+h16j	IN	A	10.38.23.132
+telserver	IN	A	10.38.23.129
+c	IN	A	10.38.23.133
+h11l	IN	A	10.38.1.1
+h13l	IN	A	10.38.1.2
+h15l	IN	A	10.38.1.3
+h13n	IN	A	10.38.1.129
+telserver	IN	A	10.38.1.130
