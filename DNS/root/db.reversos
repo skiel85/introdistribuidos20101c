@@ -1,0 +1,17 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	ns1.sanluis.dc.fi.uba.ar. root.sanluis.dc.fi.uba.ar. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	ns1.sanluis.dc.fi.uba.ar.
+@	IN	NS	ns2.sanluis.dc.fi.uba.ar.
+1.5.10		NS	ns.resto.sanluis.dc.fi.uba.ar.
+23.168.192	NS	ns.resto.sanluis.dc.fi.uba.ar.
+1.43.157	NS	ns.resto.sanluis.dc.fi.uba.ar.
+1.38.10		NS	ns.resto.sanluis.dc.fi.uba.ar.
