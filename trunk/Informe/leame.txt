@@ -24,7 +24,7 @@ Copie el script configThis.sh al directorio root:
 
 Ubiquese en el directorio root y ejecutelo:
 > cd /root 
-> sh configThis.sh $parametro
+> ./configThis.sh $parametro
 
 Los parametros dependen de que router, server o host desee configurar en la mAquina.
 Los posibles valores son:
@@ -59,7 +59,7 @@ al directorio root
 
 Luego ejecutelo de la siguiente forma:
 > cd /root 
-> sh configDNS.sh $parametro
+> ./configDNS.sh $parametro
 
 Los posibles parametros son: 'root', 'slave', 'concaran', o 'resto' segun sea el servidor que desa configurar.
  
