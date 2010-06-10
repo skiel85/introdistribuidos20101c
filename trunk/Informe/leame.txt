@@ -1,0 +1,65 @@
+************************************************************************************
+*                  75.43 INTRODUCCION A LOS SISTEMAS DISTRIBUIDOS                  *
+*                             TRABAJO PRACTICO GRUPAL                              *
+*                 CONFIGURACION Y CALCULO DE TRAFICO SOBRE UNA RED                 *
+************************************************************************************
+
+------------
+INTRODUCCION
+------------
+
+En el presente documento se detalla informaciOn relevante acerca de como realizar la 
+configuraciOn de los equipos para la simulaciOn de laboratorio.
+
+En todos los casos, comience por abrir una terminal y loguearse como super usuario:
+> sudo su
+> password : distribuidos
+
+------------------------------------------------------
+CONFIGURACION DE INTERFACES Y TABLAS DE RUTEO (NO DNS)
+------------------------------------------------------
+
+Copie el script configThis.sh al directorio root:
+> cp $DIR_CD/Scripts/configThis.sh /root/
+
+Ubiquese en el directorio root y ejecutelo:
+> cd /root 
+> sh configThis.sh $parametro
+
+Los parametros dependen de que router, server o host desee configurar en la mAquina.
+Los posibles valores son:
+- 'h2', 'h3', 'h13', 'h15', 'h31' o 'h34' para los respectivos routers.
+- 'webserver', 'telserver' o 'ftpserver' para los respectivos servidores.
+- 'hostA', 'hostB' o 'hostC' para los respectivos hosts.
+
+------------------------
+LANZAMIENTO DE SERVICIOS
+------------------------
+
+En caso de que desee configurar uno de los servidores, debe iniciar el servicio correspondiente.
+Para eso, copie el archivo servicios.sh a root.
+> cp $DIR_CD/Scripts/servicios.sh /root
+
+Luego ejecutelo de la siguiente manera:
+> sh servicios.sh $parametro
+
+Los posibles parametros son:
+- 'web' para el Web Server
+- 'tel' para el Telnet Server
+- 'ftp' para el FTP Server
+
+---------------------
+CONFIGURACION DEL DNS
+---------------------
+
+Si desea realizar la configuraciOn de uno de los servidores DNS copie el script configDNS.sh
+al directorio root
+
+> cp $DIR_CD/DNS/configDNS.sh /root
+
+Luego ejecutelo de la siguiente forma:
+> cd /root 
+> sh configDNS.sh $parametro
+
+Los posibles parametros son: 'root', 'slave', 'concaran', o 'resto' segun sea el servidor que desa configurar.
+ 
