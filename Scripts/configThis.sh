@@ -10,7 +10,7 @@
 # h1, h2 , h3, h4, h7, h11, h13, h15, h16, h29, h30, h31, h34
 
 # SERVIDORES
-# webserver, telserver_j, telserver_n, ftpserver
+# webserver, telserver, ftpserver
 
 # HOSTS
 # hostA, hostB, hostC
@@ -352,12 +352,10 @@ case "$1" in
 		ifconfig $ETH $WEB_SERVER netmask $MSK_B
 		route add default gw $H3_E
 	    ;;
-	    telserver_j)
-		ifconfig $ETH $TEL_SERVER_J netmask $MSK_J
+	    telserver)
+		ifconfig $ETH:1 $TEL_SERVER_J netmask $MSK_J
 		route add default gw $H16_J
-	    ;;
-	    telserver_n)
-		ifconfig $ETH $TEL_SERVER_N netmask $MSK_N
+		ifconfig $ETH:2 $TEL_SERVER_N netmask $MSK_N
 		route add default gw $H13_J
 	    ;;
 	    ftpserver)
