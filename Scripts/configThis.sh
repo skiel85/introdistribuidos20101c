@@ -67,7 +67,7 @@ MSK_F=255.255.255.252
 NET_G=157.43.1.252
 MSK_G=255.255.255.252
 
-NET_H=10.38.23.96
+NET_H=10.4.3.0
 MSK_H=255.255.255.224
 
 NET_I=10.38.23.248
@@ -76,7 +76,7 @@ MSK_I=255.255.255.252
 NET_J=10.38.23.128
 MSK_J=255.255.255.240
 
-NET_K=10.38.23.64
+NET_K=10.4.3.64
 MSK_K=255.255.255.224
 
 NET_L=10.38.1.0
@@ -165,19 +165,19 @@ H30_K=10.38.23.66
 ##########################
 
 ##########################
-H31_H=10.38.23.97
-H31_K=10.38.23.67
+H31_H=10.4.3.1
+H31_K=10.4.3.67
 H31_M=10.7.1.3
 ##########################
 
 ##########################
-H34_H=10.38.23.98
+H34_H=10.4.3.2
 H34_I=10.38.23.250
 ##########################
 
 # HOSTS
 HOSTA_NETB=10.38.23.5
-HOSTB_NETK=10.38.23.68
+HOSTB_NETK=10.4.3.68
 HOSTC_NETJ=10.38.23.133
 
 # SERVIDORES
@@ -206,20 +206,21 @@ ifconfig $ETH up
 echo "ingrese ENTER cuando crea que la interfaz ya se levanto:"
 read a
 
-# FORWARDING
-echo 1 > /proc/sys/net/ipv4/ip_forward
-
 case "$1" in
 	    h1)
     		ifconfig $ETH $H1_A1 netmask $MSK_A_1
     		ifconfig $ETH:0 $H1_A2 netmask $MSK_A_2
     		ifconfig $ETH:1 $H1_A3 netmask $MSK_A_3
-    		ifconfig $ETH:2 $H1_B netmask $MSK_B		
+    		ifconfig $ETH:2 $H1_B netmask $MSK_B
+        # FORWARDING
+        echo 1 > /proc/sys/net/ipv4/ip_forward		
 	    ;;
 	    h2)
     		ifconfig $ETH $H2_B netmask $MSK_B
     		ifconfig $ETH:0 $H2_C netmask $MSK_C
-    
+        # FORWARDING
+        echo 1 > /proc/sys/net/ipv4/ip_forward
+        
     		route add -net $NET_B netmask $MSK_B $ETH
     		route add -net $NET_C netmask $MSK_C $ETH:0
     		route add -net $NET_D netmask $MSK_D gw $H3_B
@@ -236,7 +237,9 @@ case "$1" in
     		ifconfig $ETH $H3_B netmask $MSK_B
     		ifconfig $ETH:0 $H3_D netmask $MSK_D
     		ifconfig $ETH:1 $H3_E netmask $MSK_E
-    		
+    		# FORWARDING
+        echo 1 > /proc/sys/net/ipv4/ip_forward
+        
     		route add -net $NET_B netmask $MSK_B $ETH
     		route add -net $NET_D netmask $MSK_D $ETH:0
     		route add -net $NET_E netmask $MSK_E $ETH:1
@@ -252,23 +255,30 @@ case "$1" in
 	    h4)
     		ifconfig $ETH $H4_B netmask $MSK_B
     		ifconfig $ETH:0 $H4_E netmask $MSK_E
-		
+		    # FORWARDING
+        echo 1 > /proc/sys/net/ipv4/ip_forward
 	    ;;
 	    h7)
-		ifconfig $ETH $H7_E netmask $MSK_E		
+		    ifconfig $ETH $H7_E netmask $MSK_E	
+        # FORWARDING
+        echo 1 > /proc/sys/net/ipv4/ip_forward	
 	    ;;
 	    h11)
     		ifconfig $ETH $H11_A1 netmask $MSK_A_1
     		ifconfig $ETH:0 $H11_A4 netmask $MSK_A_4
     		ifconfig $ETH:1 $H11_A5 netmask $MSK_A_5
     		ifconfig $ETH:0 $H11_L netmask $MSK_L		
+    		# FORWARDING
+        echo 1 > /proc/sys/net/ipv4/ip_forward
 	    ;;
 	    h13)
     		ifconfig $ETH $H13_C netmask $MSK_C
     		ifconfig $ETH:0 $H13_J netmask $MSK_J
     		ifconfig $ETH:1 $H13_L netmask $MSK_L
     		ifconfig $ETH:2 $H13_N netmask $MSK_N
-    
+        # FORWARDING
+        echo 1 > /proc/sys/net/ipv4/ip_forward
+        
     		route add -net $NET_C netmask $MSK_C $ETH
     		route add -net $NET_J netmask $MSK_J $ETH:0
     		route add -net $NET_L netmask $MSK_L $ETH:1
@@ -288,7 +298,9 @@ case "$1" in
     		ifconfig $ETH:2 $H15_I netmask $MSK_I
     		ifconfig $ETH:3 $H15_J netmask $MSK_J
     		ifconfig $ETH:4 $H15_L netmask $MSK_L
-    
+        # FORWARDING
+        echo 1 > /proc/sys/net/ipv4/ip_forward
+        
     		#ACA VAN LAS RUTAS
     		route add -net $NET_I netmask $MSK_I $ETH:2
     		route add -net $NET_J netmask $MSK_J $ETH:3
@@ -303,22 +315,30 @@ case "$1" in
     		route add -net $NET_N netmask $MSK_N gw $H13_J
 	    ;;
 	    h16)
-		ifconfig $ETH $H16_J netmask $MSK_J		
+		    ifconfig $ETH $H16_J netmask $MSK_J		
+        # FORWARDING
+        echo 1 > /proc/sys/net/ipv4/ip_forward
 	    ;;
 	    h29)
     		ifconfig $ETH $H29_K netmask $MSK_K
-    		ifconfig $ETH:0 $H29_M netmaskk $MSK_M		
+    		ifconfig $ETH:0 $H29_M netmaskk $MSK_M	
+        # FORWARDING
+        echo 1 > /proc/sys/net/ipv4/ip_forward	
 	    ;;
 	    h30)
     		ifconfig $ETH $H30_A3 netmask $MSK_A_3
     		ifconfig $ETH:0 $H30_A5 netmask $MSK_A_5
     		ifconfig $ETH:1 $H30_A6 netmask $MSK_A_6
-    		ifconfig $ETH:2 $H30_K netmask $MSK_K		
+    		ifconfig $ETH:2 $H30_K netmask $MSK_K
+        # FORWARDING
+        echo 1 > /proc/sys/net/ipv4/ip_forward		
 	    ;;
 	    h31)
     		ifconfig $ETH $H31_H netmask $MSK_H
-    		ifconfig $ETH;0 $H31_K netmask $MSK_K
+    		ifconfig $ETH:0 $H31_K netmask $MSK_K
     		ifconfig $ETH:1 $H31_M netmask $MSK_M
+    		# FORWARDING
+        echo 1 > /proc/sys/net/ipv4/ip_forward
     		
     		route add -net $NET_H netmask $MSK_H $ETH
     		route add -net $NET_K netmask $MSK_K $ETH:0
@@ -335,6 +355,8 @@ case "$1" in
 	    h34)
     		ifconfig $ETH $H34_H netmask $MSK_H
     		ifconfig $ETH:0 $H34_I netmask $MSK_I
+        # FORWARDING
+        echo 1 > /proc/sys/net/ipv4/ip_forward
 
     		route add -net $NET_H netmask $MSK_H $ETH
     		route add -net $NET_I netmask $MSK_I $ETH:0
