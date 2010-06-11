@@ -7,7 +7,7 @@
 
 # LISTADO DE PARAMETROS
 # ROUTERS
-# h1, h2 , h3, h4, h7, h11, h13, h15, h16, h29, h30, h31, h34
+# h2, h3, h13, h15, h16, h29, h30, h31, h34
 
 # SERVIDORES
 # webserver, telserver, ftpserver
@@ -203,26 +203,16 @@ ETH=`ifconfig -a | grep -m1 "^eth.*" | awk {'print $1'}`
 
 # LEVANTO LA INTERFACE
 ifconfig $ETH up
-echo "ingrese ENTER cuando crea que la interfaz ya se levanto:"
+echo "Presione ENTER cuando la interface este habilitada:"
 read a
 
-case "$1" in
-	    h1)
-    		ifconfig $ETH $H1_A1 netmask $MSK_A_1
-    		ifconfig $ETH:0 $H1_A2 netmask $MSK_A_2
-    		ifconfig $ETH:1 $H1_A3 netmask $MSK_A_3
-    		ifconfig $ETH:2 $H1_B netmask $MSK_B
-        # FORWARDING
-        echo 1 > /proc/sys/net/ipv4/ip_forward		
-	    ;;
+case "$1" in	    
 	    h2)
     		ifconfig $ETH $H2_B netmask $MSK_B
     		ifconfig $ETH:0 $H2_C netmask $MSK_C
-        # FORWARDING
-        echo 1 > /proc/sys/net/ipv4/ip_forward
+		# FORWARDING
+		echo 1 > /proc/sys/net/ipv4/ip_forward
         
-    		route add -net $NET_B netmask $MSK_B $ETH
-    		route add -net $NET_C netmask $MSK_C $ETH:0
     		route add -net $NET_D netmask $MSK_D gw $H3_B
     		route add -net $NET_E netmask $MSK_E gw $H3_B
     		route add -net $NET_H netmask $MSK_H gw $H13_C
@@ -238,11 +228,8 @@ case "$1" in
     		ifconfig $ETH:0 $H3_D netmask $MSK_D
     		ifconfig $ETH:1 $H3_E netmask $MSK_E
     		# FORWARDING
-        echo 1 > /proc/sys/net/ipv4/ip_forward
-        
-    		route add -net $NET_B netmask $MSK_B $ETH
-    		route add -net $NET_D netmask $MSK_D $ETH:0
-    		route add -net $NET_E netmask $MSK_E $ETH:1
+        	echo 1 > /proc/sys/net/ipv4/ip_forward        
+    		
     		route add -net $NET_H netmask $MSK_H gw $H2_B
     		route add -net $NET_I netmask $MSK_I gw $H2_B
     		route add -net $NET_J netmask $MSK_J gw $H2_B
@@ -251,38 +238,15 @@ case "$1" in
     		route add -net $NET_M netmask $MSK_M gw $H2_B
     		route add -net $NET_N netmask $MSK_N gw $H2_B
     		route add -net $NET_C netmask $MSK_C gw $H2_B
-	    ;;
-	    h4)
-    		ifconfig $ETH $H4_B netmask $MSK_B
-    		ifconfig $ETH:0 $H4_E netmask $MSK_E
-		    # FORWARDING
-        echo 1 > /proc/sys/net/ipv4/ip_forward
-	    ;;
-	    h7)
-		    ifconfig $ETH $H7_E netmask $MSK_E	
-        # FORWARDING
-        echo 1 > /proc/sys/net/ipv4/ip_forward	
-	    ;;
-	    h11)
-    		ifconfig $ETH $H11_A1 netmask $MSK_A_1
-    		ifconfig $ETH:0 $H11_A4 netmask $MSK_A_4
-    		ifconfig $ETH:1 $H11_A5 netmask $MSK_A_5
-    		ifconfig $ETH:0 $H11_L netmask $MSK_L		
-    		# FORWARDING
-        echo 1 > /proc/sys/net/ipv4/ip_forward
-	    ;;
+	    ;;	    
 	    h13)
     		ifconfig $ETH $H13_C netmask $MSK_C
     		ifconfig $ETH:0 $H13_J netmask $MSK_J
     		ifconfig $ETH:1 $H13_L netmask $MSK_L
     		ifconfig $ETH:2 $H13_N netmask $MSK_N
-        # FORWARDING
-        echo 1 > /proc/sys/net/ipv4/ip_forward
-        
-    		route add -net $NET_C netmask $MSK_C $ETH
-    		route add -net $NET_J netmask $MSK_J $ETH:0
-    		route add -net $NET_L netmask $MSK_L $ETH:1
-    		route add -net $NET_N netmask $MSK_N $ETH:2    
+		# FORWARDING
+		echo 1 > /proc/sys/net/ipv4/ip_forward
+
     		route add -net $NET_B netmask $MSK_B gw $H2_C
     		route add -net $NET_D netmask $MSK_D gw $H2_C
     		route add -net $NET_E netmask $MSK_E gw $H2_C
@@ -292,19 +256,13 @@ case "$1" in
     		route add -net $NET_M netmask $MSK_M gw $H15_J
 	    ;;
 	    h15)
-    		ifconfig $ETH $H15_A2 netmask $MSK_A_2
-    		ifconfig $ETH:0 $H15_A4 netmask $MSK_A_4
-    		ifconfig $ETH:1 $H15_A6 netmask $MSK_A_6
-    		ifconfig $ETH:2 $H15_I netmask $MSK_I
-    		ifconfig $ETH:3 $H15_J netmask $MSK_J
-    		ifconfig $ETH:4 $H15_L netmask $MSK_L
-        # FORWARDING
-        echo 1 > /proc/sys/net/ipv4/ip_forward
+    		ifconfig $ETH $H15_I netmask $MSK_I
+    		ifconfig $ETH:0 $H15_J netmask $MSK_J
+    		ifconfig $ETH:1 $H15_L netmask $MSK_L
+		# FORWARDING
+		echo 1 > /proc/sys/net/ipv4/ip_forward
         
-    		#ACA VAN LAS RUTAS
-    		route add -net $NET_I netmask $MSK_I $ETH:2
-    		route add -net $NET_J netmask $MSK_J $ETH:3
-    		route add -net $NET_L netmask $MSK_L $ETH:4    
+    		#ACA VAN LAS RUTAS    		    
     		route add -net $NET_B netmask $MSK_B gw $H13_J
     		route add -net $NET_C netmask $MSK_C gw $H13_J
     		route add -net $NET_D netmask $MSK_D gw $H13_J
@@ -313,53 +271,29 @@ case "$1" in
     		route add -net $NET_K netmask $MSK_K gw $H34_I
     		route add -net $NET_M netmask $MSK_M gw $H34_I
     		route add -net $NET_N netmask $MSK_N gw $H13_J
-	    ;;
-	    h16)
-		    ifconfig $ETH $H16_J netmask $MSK_J		
-        # FORWARDING
-        echo 1 > /proc/sys/net/ipv4/ip_forward
-	    ;;
-	    h29)
-    		ifconfig $ETH $H29_K netmask $MSK_K
-    		ifconfig $ETH:0 $H29_M netmaskk $MSK_M	
-        # FORWARDING
-        echo 1 > /proc/sys/net/ipv4/ip_forward	
-	    ;;
-	    h30)
-    		ifconfig $ETH $H30_A3 netmask $MSK_A_3
-    		ifconfig $ETH:0 $H30_A5 netmask $MSK_A_5
-    		ifconfig $ETH:1 $H30_A6 netmask $MSK_A_6
-    		ifconfig $ETH:2 $H30_K netmask $MSK_K
-        # FORWARDING
-        echo 1 > /proc/sys/net/ipv4/ip_forward		
-	    ;;
+	    ;;    
 	    h31)
     		ifconfig $ETH $H31_H netmask $MSK_H
     		ifconfig $ETH:0 $H31_K netmask $MSK_K
     		ifconfig $ETH:1 $H31_M netmask $MSK_M
     		# FORWARDING
-        echo 1 > /proc/sys/net/ipv4/ip_forward
+	        echo 1 > /proc/sys/net/ipv4/ip_forward
     		
-    		route add -net $NET_H netmask $MSK_H $ETH
-    		route add -net $NET_K netmask $MSK_K $ETH:0
-    		route add -net $NET_M netmask $MSK_M $ETH:1		
-		    route add -net $NET_B netmask $MSK_B gw $H34_H	
-		    route add -net $NET_C netmask $MSK_C gw $H34_H	
-		    route add -net $NET_D netmask $MSK_D gw $H34_H
-		    route add -net $NET_E netmask $MSK_E gw $H34_H	
-		    route add -net $NET_I netmask $MSK_I gw $H34_H
-		    route add -net $NET_J netmask $MSK_J gw $H34_H	
-		    route add -net $NET_L netmask $MSK_L gw $H34_H	
-		    route add -net $NET_N netmask $MSK_N gw $H34_H
+		route add -net $NET_B netmask $MSK_B gw $H34_H	
+		route add -net $NET_C netmask $MSK_C gw $H34_H	
+		route add -net $NET_D netmask $MSK_D gw $H34_H
+		route add -net $NET_E netmask $MSK_E gw $H34_H	
+		route add -net $NET_I netmask $MSK_I gw $H34_H
+		route add -net $NET_J netmask $MSK_J gw $H34_H	
+   		route add -net $NET_L netmask $MSK_L gw $H34_H	
+		route add -net $NET_N netmask $MSK_N gw $H34_H
 	    ;;
 	    h34)
     		ifconfig $ETH $H34_H netmask $MSK_H
     		ifconfig $ETH:0 $H34_I netmask $MSK_I
-        # FORWARDING
-        echo 1 > /proc/sys/net/ipv4/ip_forward
+		# FORWARDING
+		echo 1 > /proc/sys/net/ipv4/ip_forward
 
-    		route add -net $NET_H netmask $MSK_H $ETH
-    		route add -net $NET_I netmask $MSK_I $ETH:0
     		route add -net $NET_B netmask $MSK_B gw $H15_I	
     		route add -net $NET_C netmask $MSK_C gw $H15_I	
     		route add -net $NET_D netmask $MSK_D gw $H15_I
@@ -371,29 +305,36 @@ case "$1" in
     		route add -net $NET_N netmask $MSK_N gw $H15_I
 	    ;;
 	    webserver)
+		echo 0 > /proc/sys/net/ipv4/ip_forward
     		ifconfig $ETH $WEB_SERVER netmask $MSK_B
     		route add -net default gw $H3_E
 	    ;;
 	    telserver)
-    		ifconfig $ETH:1 $TEL_SERVER_J netmask $MSK_J
-    		route add -net default gw $H16_J
-    		ifconfig $ETH:2 $TEL_SERVER_N netmask $MSK_N
+		echo 0 > /proc/sys/net/ipv4/ip_forward
+    		ifconfig $ETH $TEL_SERVER_J netmask $MSK_J    		
+    		ifconfig $ETH:0 $TEL_SERVER_N netmask $MSK_N
     		route add -net default gw $H13_J
 	    ;;
 	    ftpserver)
+		echo 0 > /proc/sys/net/ipv4/ip_forward
     		ifconfig $ETH $FTP_SERVER netmask $MSK_M
     		route add -net default gw $H31_M
 	    ;;
 	    hostA)
+		echo 0 > /proc/sys/net/ipv4/ip_forward
     		ifconfig $ETH $HOSTA_NETB netmask $MSK_B
     		route add -net default gw $H2_B
 	    ;;
 	    hostB)
+		echo 0 > /proc/sys/net/ipv4/ip_forward
     		ifconfig $ETH $HOSTB_NETK netmask $MSK_K
     		route add -net default gw $H31_K
 	    ;;
 	    hostC)
+		echo 0 > /proc/sys/net/ipv4/ip_forward		
     		ifconfig $ETH $HOSTC_NETJ netmask $MSK_J
     		route add -net default gw $H16_J
 	    ;;
+	    *)
+		echo "Parametro incorrecto"
 esac
