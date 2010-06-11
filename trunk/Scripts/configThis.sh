@@ -187,8 +187,8 @@ TEL_SERVER_N=10.38.1.130
 FTP_SERVER=10.7.1.1
 
 # CONFIGURO LOS DNS
-MASTER_DNS=0.0.0.0
-SLAVE_DNS=0.0.0.0
+MASTER_DNS=10.38.1.131
+SLAVE_DNS=10.38.23.6
 # echo "nameserver $MASTER_DNS\nnameserver $SLAVE_DNS" > /etc/resolv.conf
 
 # SHUTEO TODAS LAS INTERFACES ETHERNET QUE HAYA
@@ -343,14 +343,14 @@ case "$1" in
     		route add -net $NET_H netmask $MSK_H $ETH
     		route add -net $NET_K netmask $MSK_K $ETH:0
     		route add -net $NET_M netmask $MSK_M $ETH:1		
-		route add -net $NET_B netmask $MSK_B gw $H34_H	
-		route add -net $NET_C netmask $MSK_C gw $H34_H	
-		route add -net $NET_D netmask $MSK_D gw $H34_H
-		route add -net $NET_E netmask $MSK_E gw $H34_H	
-		route add -net $NET_I netmask $MSK_I gw $H34_H
-		route add -net $NET_J netmask $MSK_J gw $H34_H	
-		route add -net $NET_L netmask $MSK_L gw $H34_H	
-		route add -net $NET_N netmask $MSK_N gw $H34_H
+		    route add -net $NET_B netmask $MSK_B gw $H34_H	
+		    route add -net $NET_C netmask $MSK_C gw $H34_H	
+		    route add -net $NET_D netmask $MSK_D gw $H34_H
+		    route add -net $NET_E netmask $MSK_E gw $H34_H	
+		    route add -net $NET_I netmask $MSK_I gw $H34_H
+		    route add -net $NET_J netmask $MSK_J gw $H34_H	
+		    route add -net $NET_L netmask $MSK_L gw $H34_H	
+		    route add -net $NET_N netmask $MSK_N gw $H34_H
 	    ;;
 	    h34)
     		ifconfig $ETH $H34_H netmask $MSK_H
@@ -360,40 +360,40 @@ case "$1" in
 
     		route add -net $NET_H netmask $MSK_H $ETH
     		route add -net $NET_I netmask $MSK_I $ETH:0
-		route add -net $NET_B netmask $MSK_B gw $H15_I	
-		route add -net $NET_C netmask $MSK_C gw $H15_I	
-		route add -net $NET_D netmask $MSK_D gw $H15_I
-		route add -net $NET_E netmask $MSK_E gw $H15_I
-		route add -net $NET_J netmask $MSK_J gw $H15_I
-		route add -net $NET_K netmask $MSK_K gw $H31_H
-		route add -net $NET_L netmask $MSK_L gw $H15_I
-		route add -net $NET_M netmask $MSK_M gw $H31_H
-		route add -net $NET_N netmask $MSK_N gw $H15_I
+    		route add -net $NET_B netmask $MSK_B gw $H15_I	
+    		route add -net $NET_C netmask $MSK_C gw $H15_I	
+    		route add -net $NET_D netmask $MSK_D gw $H15_I
+    		route add -net $NET_E netmask $MSK_E gw $H15_I
+    		route add -net $NET_J netmask $MSK_J gw $H15_I
+    		route add -net $NET_K netmask $MSK_K gw $H31_H
+    		route add -net $NET_L netmask $MSK_L gw $H15_I
+    		route add -net $NET_M netmask $MSK_M gw $H31_H
+    		route add -net $NET_N netmask $MSK_N gw $H15_I
 	    ;;
 	    webserver)
-		ifconfig $ETH $WEB_SERVER netmask $MSK_B
-		route add default gw $H3_E
+    		ifconfig $ETH $WEB_SERVER netmask $MSK_B
+    		route add -net default gw $H3_E
 	    ;;
 	    telserver)
-		ifconfig $ETH:1 $TEL_SERVER_J netmask $MSK_J
-		route add default gw $H16_J
-		ifconfig $ETH:2 $TEL_SERVER_N netmask $MSK_N
-		route add default gw $H13_J
+    		ifconfig $ETH:1 $TEL_SERVER_J netmask $MSK_J
+    		route add -net default gw $H16_J
+    		ifconfig $ETH:2 $TEL_SERVER_N netmask $MSK_N
+    		route add -net default gw $H13_J
 	    ;;
 	    ftpserver)
-		ifconfig $ETH $FTP_SERVER netmask $MSK_M
-		route add default gw $H31_M
+    		ifconfig $ETH $FTP_SERVER netmask $MSK_M
+    		route add -net default gw $H31_M
 	    ;;
 	    hostA)
-		ifconfig $ETH $HOSTA_NETB netmask $MSK_B
-		route add default gw $H2_B
+    		ifconfig $ETH $HOSTA_NETB netmask $MSK_B
+    		route add -net default gw $H2_B
 	    ;;
 	    hostB)
-		ifconfig $ETH $HOSTB_NETK netmask $MSK_K
-		route add default gw $H30_K
+    		ifconfig $ETH $HOSTB_NETK netmask $MSK_K
+    		route add -net default gw $H31_K
 	    ;;
 	    hostC)
-		ifconfig $ETH $HOSTC_NETJ netmask $MSK_J
-		route add default gw $H16_J
+    		ifconfig $ETH $HOSTC_NETJ netmask $MSK_J
+    		route add -net default gw $H16_J
 	    ;;
 esac
