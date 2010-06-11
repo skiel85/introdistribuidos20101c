@@ -67,6 +67,6 @@ case "$1" in
 	*)
 	echo "Error de parámetros"
 	echo "Debe invocar: ./servicios.sh <tipo_server>"
-	echo "tipo_server : web - tel - ftp
+	echo "tipo_server : web - tel - ftp"
 	;;
 esac
