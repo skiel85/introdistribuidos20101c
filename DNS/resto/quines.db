@@ -5,7 +5,7 @@
                         2419200
                          604800 )
 @	IN	NS	ns.resto.sanluis.dc.fi.uba.ar.
-ns	IN	A	10.4.3.37
+ns	IN	A	10.4.3.29
 h1a1	IN	A	10.5.1.65
 h11a1	IN	A	10.5.1.66
 h1a2	IN	A	10.5.1.69
