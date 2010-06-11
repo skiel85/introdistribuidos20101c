@@ -10,7 +10,7 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 @	IN	NS	ns.resto.sanluis.dc.fi.uba.ar.
-ns	IN	A	10.38.23.69
+ns	IN	A	10.4.3.37
 h1a1	IN	A	10.5.1.65
 h11a1	IN	A	10.5.1.66
 h1a2	IN	A	10.5.1.69
@@ -32,8 +32,8 @@ h34i	IN	A	10.38.23.250
 h13j	IN	A	10.38.23.130
 h15j	IN	A	10.38.23.131
 h16j	IN	A	10.38.23.132
-telserver	IN	A	10.38.23.129
-c	IN	A	10.38.23.133
+telserverj	IN	A	10.38.23.129
+charango1	IN	A	10.38.23.133
 h11l	IN	A	10.38.1.1
 h13l	IN	A	10.38.1.2
 h15l	IN	A	10.38.1.3

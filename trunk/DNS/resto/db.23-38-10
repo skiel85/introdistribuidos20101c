@@ -1,0 +1,27 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	ns.resto.sanluis.dc.fi.uba.ar. root.resto.sanluis.dc.fi.uba.ar. (
+			2010061001	; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	ns.resto.sanluis.dc.fi.uba.ar.
+1	IN	PTR	h1b.merlo.sanluis.dc.fi.uba.ar.
+2	IN	PTR	h2b.merlo.sanluis.dc.fi.uba.ar.
+3	IN	PTR	h3b.merlo.sanluis.dc.fi.uba.ar.
+4	IN	PTR	h4b.merlo.sanluis.dc.fi.uba.ar.
+5	IN	PTR	quena1.merlo.sanluis.dc.fi.uba.ar.
+129	IN	PTR	telserverj.quines.sanluis.dc.fi.uba.ar.
+130	IN	PTR	h13j.quines.sanluis.dc.fi.uba.ar.
+131	IN	PTR	h15j.quines.sanluis.dc.fi.uba.ar.
+132	IN	PTR	h16j.quines.sanluis.dc.fi.uba.ar.
+133	IN	PTR	charango1.quines.sanluis.dc.fi.uba.ar.
+145	IN	PTR	h3d.merlo.sanluis.dc.fi.uba.ar.
+249	IN	PTR	h15i.quines.sanluis.dc.fi.uba.ar.
+250	IN	PTR	h34i.quines.sanluis.dc.fi.uba.ar.
+253	IN	PTR	h2c.merlo.sanluis.dc.fi.uba.ar.
+254	IN	PTR	h13c.merlo.sanluis.dc.fi.uba.ar.

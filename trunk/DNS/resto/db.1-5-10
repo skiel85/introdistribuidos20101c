@@ -2,15 +2,23 @@
 ; BIND reverse data file for local loopback interface
 ;
 $TTL	604800
-@	IN	SOA	ns.concaran.sanluis.dc.fi.uba.ar. root.concaran.sanluis.dc.fi.uba.ar. (
-			      1		; Serial
+@	IN	SOA	ns.resto.sanluis.dc.fi.uba.ar. root.resto.sanluis.dc.fi.uba.ar. (
+			2010061001	; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
-@	IN	NS	ns.concaran.sanluis.dc.fi.uba.ar.
-65	IN	PTR	h29k.concaran.sanluis.dc.fi.uba.ar.
-66	IN	PTR	h30k.concaran.sanluis.dc.fi.uba.ar.
-67	IN	PTR	h31.concaran.sanluis.dc.fi.uba.ar.
-68	IN	PTR	b.concaran.sanluis.dc.fi.uba.ar.
+@	IN	NS	ns.resto.sanluis.dc.fi.uba.ar.
+65	IN	PTR	h1a1.quines.sanluis.dc.fi.uba.ar.
+66	IN	PTR	h11a1.quines.sanluis.dc.fi.uba.ar.
+69	IN	PTR	h1a2.quines.sanluis.dc.fi.uba.ar.
+70	IN	PTR	h15a2.quines.sanluis.dc.fi.uba.ar.
+73	IN	PTR	h1a3.quines.sanluis.dc.fi.uba.ar.
+74	IN	PTR	h30a3.quines.sanluis.dc.fi.uba.ar.
+77	IN	PTR	h11a4.quines.sanluis.dc.fi.uba.ar.
+78	IN	PTR	h15a4.quines.sanluis.dc.fi.uba.ar.
+81	IN	PTR	h11a5.quines.sanluis.dc.fi.uba.ar.
+82	IN	PTR	h30a5.quines.sanluis.dc.fi.uba.ar.
+85	IN	PTR	h15a6.quines.sanluis.dc.fi.uba.ar.
+86	IN	PTR	h30a6.quines.sanluis.dc.fi.uba.ar.
