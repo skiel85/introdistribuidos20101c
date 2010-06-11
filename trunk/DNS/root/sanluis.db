@@ -12,5 +12,5 @@ concaran	IN	NS	ns.concaran.sanluis.dc.fi.uba.ar.
 ns1	IN	A	10.38.1.131
 ns2	IN	A	10.38.23.6
 ns.concaran.sanluis.dc.fi.uba.ar.	IN	A	10.38.23.134
-ns.resto.sanluis.dc.fi.uba.ar.	IN	A	10.4.3.37
+ns.resto.sanluis.dc.fi.uba.ar.	IN	A	10.4.3.29
                       

@@ -19,9 +19,9 @@ H13_J=10.38.23.130
 CONCARAN_NETJ=10.38.23.134
 MSK_J=255.255.255.240
 
-H31_K=10.4.3.35
-RESTO_NETK=10.4.3.37
-MSK_K=255.255.255.224
+H31_H=10.4.3.1
+RESTO_NETH=10.4.3.29
+MSK_H=255.255.255.224
 
 H13_N=10.38.1.129
 ROOT_NETN=10.38.1.131
@@ -77,13 +77,13 @@ case "$1" in
         	# ARCHVOS DE DNS
         	cp $BIND_DIR/named.conf $BIND_DIR/named.conf.bk
         	cp $CONCARAN_DIR/named.conf $BIND_DIR/named.conf
-        	cp $CONCARAN_DIR/concaran $BIND_DIR/db.concaran
+        	cp $CONCARAN_DIR/concaran.db $BIND_DIR/concaran.db
         	cp $CONCARAN_DIR/1.db $BIND_DIR/1.db
         	cp $CONCARAN_DIR/3.db $BIND_DIR/3.db
 	    ;;
 	    $RESTO)
-        	ifconfig $ETH $RESTO_NETK netmask $MSK_K
-        	route add -net default gw $H31_K
+        	ifconfig $ETH $RESTO_NETH netmask $MSK_H
+        	route add -net default gw $H31_H
         	# ARCHVOS DE DNS
         	cp $BIND_DIR/named.conf $BIND_DIR/named.conf.bk
           cp $RESTO_DIR/named.conf $BIND_DIR/named.conf
