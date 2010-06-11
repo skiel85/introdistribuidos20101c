@@ -1,14 +1,9 @@
-;
-; BIND data file for local loopback interface
-;
-$TTL	604800
-@	IN	SOA	ns.resto.sanluis.dc.fi.uba.ar. root.resto.sanluis.dc.fi.uba.ar. (
-			2010060701	; Serial
-			 604800		; Refresh
-			  86400		; Retry
-			2419200		; Expire
-			 604800 )	; Negative Cache TTL
-;
+@	IN	SOA	ns.resto.sanluis.dc.fi.uba.ar. postmaster.resto.sanluis.dc.fi.uba.ar. (
+                              1
+                         604800
+                          86400
+                        2419200
+                         604800 )
 @	IN	NS	ns.resto.sanluis.dc.fi.uba.ar.
 ns	IN	A	10.4.3.37
 h1a1	IN	A	10.5.1.65

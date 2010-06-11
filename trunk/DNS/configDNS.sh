@@ -56,42 +56,43 @@ case "$1" in
         	ifconfig $ETH $ROOT_NETN netmask $MSK_N
         	route add -net default gw $H13_N
         	# ARCHVOS DE DNS
-        	cp $BIND_DIR/named.conf.local $BIND_DIR/named.conf.local.bk.g1
-        	cp $ROOT_DIR/named.conf $BIND_DIR/named.conf.local
-        	cp $ROOT_DIR/db.sanluis $BIND_DIR/db.sanluis
-		cp $ROOT_DIR/db.reversos $BIND_DIR/db.reversos
+        	cp $BIND_DIR/named.conf $BIND_DIR/named.conf.bk
+        	cp $ROOT_DIR/named.conf $BIND_DIR/named.conf
+        	cp $ROOT_DIR/sanluis.db $BIND_DIR/sanluis.db
+		      cp $ROOT_DIR/reversos.db $BIND_DIR/reversos.db
 	    ;;
 	    $SLAVE)
 	      	# CONFIGURACION DE RED Y DEFAULT GATEWAY PARA SLAVE
         	ifconfig $ETH $SLAVE_NETB netmask $MSK_B
         	route add -net default gw $H2_B
         	# ARCHVOS DE DNS
-        	cp $BIND_DIR/named.conf $BIND_DIR/named.conf.local.bk.g1
-        	cp $SLAVE_DIR/named.conf $BIND_DIR/named.conf.local
-		cp $SLAVE_DIR/db.reversos $BIND_DIR/db.reversos
-		cp $SLAVE_DIR/db.sanluis $BIND_DIR/db.sanluis
+        	cp $BIND_DIR/named.conf $BIND_DIR/named.conf.bk
+        	cp $SLAVE_DIR/named.conf $BIND_DIR/named.conf
+		      cp $SLAVE_DIR/sanluis.db $BIND_DIR/sanluis.db
+          cp $SLAVE_DIR/reversos.db $BIND_DIR/reversos.db
 	    ;;
 	    $CONCARAN)
         	ifconfig $ETH $CONCARAN_NETJ netmask $MSK_J
         	route add -net default gw $H13_J
         	# ARCHVOS DE DNS
-        	cp $BIND_DIR/named.conf.local $BIND_DIR/named.conf.local.bk.g1
-        	cp $CONCARAN_DIR/named.conf $BIND_DIR/named.conf.local
-        	cp $CONCARAN_DIR/db.concaran $BIND_DIR/db.concaran
-        	cp $CONCARAN_DIR/db.1-7-10 $BIND_DIR/db.1-7-10
-        	cp $CONCARAN_DIR/db.3-4-10 $BIND_DIR/db.3-4-10
+        	cp $BIND_DIR/named.conf $BIND_DIR/named.conf.bk
+        	cp $CONCARAN_DIR/named.conf $BIND_DIR/named.conf
+        	cp $CONCARAN_DIR/concaran $BIND_DIR/db.concaran
+        	cp $CONCARAN_DIR/1.db $BIND_DIR/1.db
+        	cp $CONCARAN_DIR/3.db $BIND_DIR/3.db
 	    ;;
 	    $RESTO)
         	ifconfig $ETH $RESTO_NETK netmask $MSK_K
         	route add -net default gw $H31_K
         	# ARCHVOS DE DNS
-        	cp $BIND_DIR/named.conf $BIND_DIR/named.conf.bk.g1        	
+        	cp $BIND_DIR/named.conf $BIND_DIR/named.conf.bk
+          cp $RESTO_DIR/named.conf $BIND_DIR/named.conf
         	cp $RESTO_DIR/merlo.db $BIND_DIR/merlo.db
         	cp $RESTO_DIR/quines.db $BIND_DIR/quines.db
-        	cp $RESTO_DIR/db.1-5-10 $BIND_DIR/db.1-5-10
-        	cp $RESTO_DIR/db.1-38-10 $BIND_DIR/db.1-38-10
-        	cp $RESTO_DIR/db.1-43-157 $BIND_DIR/db.1-43-157
-        	cp $RESTO_DIR/db.23-38-10 $BIND_DIR/db.23-38-10
+        	cp $RESTO_DIR/1.5.10.db $BIND_DIR/1.5.10.db
+        	cp $RESTO_DIR/1.38.10.db $BIND_DIR/1.38.10.db
+        	cp $RESTO_DIR/1.43.157.db $BIND_DIR/1.43.157.db
+        	cp $RESTO_DIR/23.38.10.db $BIND_DIR/23.38.10.db
 	    ;;
 	    *)
         	echo "Parametro incorrecto."

@@ -1,0 +1,12 @@
+@	IN	SOA	ns1.sanluis.dc.fi.uba.ar. postmaster.sanluis.dc.fi.uba.ar. (
+                              1
+                         604800
+                          86400
+                        2419200
+                         604800 )
+@	IN	NS	ns1.sanluis.dc.fi.uba.ar.
+@	IN	NS	ns2.sanluis.dc.fi.uba.ar.
+1.7.10	NS	ns.concaran.sanluis.dc.fi.uba.ar.
+3.4.10		NS	ns.concaran.sanluis.dc.fi.uba.ar.
+
+                

@@ -189,7 +189,8 @@ FTP_SERVER=10.7.1.1
 # CONFIGURO LOS DNS
 MASTER_DNS=10.38.1.131
 SLAVE_DNS=10.38.23.6
-echo "nameserver $MASTER_DNS\nnameserver $SLAVE_DNS" > /etc/resolv.conf
+echo "nameserver $MASTER_DNS" > /etc/resolv.conf
+echo "nameserver $SLAVE_DNS" >> /etc/resolv.conf
 
 # SHUTEO TODAS LAS INTERFACES ETHERNET QUE HAYA
 ifconfig | grep "^eth.*" | awk {'print $1'} | while read LINE
